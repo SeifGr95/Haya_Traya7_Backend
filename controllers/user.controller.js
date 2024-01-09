@@ -52,9 +52,9 @@ const registerUser = async (req, res, next) => {
       phoneNumber: value.phoneNumber,
       gender: value.gender,
       password: hashedPassword,
-      preferences: JSON.parse(value.preferences),
+      //preferences: JSON.parse(value.preferences),
       profileImg: img.path,
-      userLocation: JSON.parse(value.userLocation),
+      //userLocation: JSON.parse(value.userLocation),
     });
 
     // Save the user to the database
