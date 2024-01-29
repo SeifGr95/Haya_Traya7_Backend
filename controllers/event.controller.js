@@ -58,6 +58,8 @@ const createEvent = async (req, res) => {
   }
 };
 
+
+
 // Get All Events
 const getAllEvents = async (req, res) => {
   try {
@@ -179,6 +181,13 @@ const getAllEventsByUser = async (req, res) => {
     res.status(500).json({ success: false, error: "Error fetching events" });
   }
 };
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getAllEventsByGeoLocation = async (req, res) => {
   try {
     const { gender, eventType, level, state, startDate } = req.query;
@@ -269,6 +278,7 @@ const getAllEventsByGeoLocation = async (req, res) => {
       }
     ];
 
+
     // Execute the aggregation pipeline
     const events = await Event.aggregate(pipeline);
 
@@ -278,7 +288,13 @@ const getAllEventsByGeoLocation = async (req, res) => {
     res.status(500).json({ success: false, error: "Error fetching events" });
   }
 };
-// Update Event
+
+/**
+ * Update Event
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const updateEvent = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -298,6 +314,14 @@ const updateEvent = async (req, res) => {
   }
 };
 
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const participatePrivate = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -355,6 +379,15 @@ const participatePrivate = async (req, res) => {
       .json({ success: false, error: "Error participating in event" });
   }
 };
+
+
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ */
 const getEventById = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -369,6 +402,15 @@ const getEventById = async (req, res) => {
     res.status(500).json({ success: false, error: "Error fetching event" });
   }
 };
+
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const acceptParticipateEvent = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -408,6 +450,15 @@ const acceptParticipateEvent = async (req, res) => {
       .json({ success: false, error: "Error accepting participation request" });
   }
 };
+
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const refuseParticipant = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -437,7 +488,14 @@ const refuseParticipant = async (req, res) => {
       .json({ success: false, error: "Error refusing participation request" });
   }
 };
-// Participate in Event
+
+
+/**
+ * Participate in Event
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const participateInEvent = async (req, res) => {
   try {
     const eventId = req.params.id;
@@ -490,6 +548,16 @@ const participateInEvent = async (req, res) => {
       .json({ success: false, error: "Error participating in event" });
   }
 };
+
+
+
+
+/**
+ * 
+ * @param {*} req 
+ * @param {*} res 
+ * @returns 
+ */
 const cancelParticipation = async (req, res) => {
   try {
     const eventId = req.params.id;
