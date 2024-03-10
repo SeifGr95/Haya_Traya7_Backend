@@ -7,8 +7,8 @@ const signUpValidationSchema = Joi.object({
   gender: Joi.string().required(),
   phoneNumber: Joi.string().required(),
   password: Joi.string().required(),
-  preferences: Joi.string().required(),
-  userLocation: Joi.string().required(),
+  //preferences: Joi.string().required(),
+  //userLocation: Joi.string().required(),
   isNotificationActive: Joi.boolean().default(true)
 });
 

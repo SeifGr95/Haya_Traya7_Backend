@@ -2,7 +2,7 @@ const Joi = require("joi");
 
 const eventValidationSchema = Joi.object({
 
-  eventType: Joi.string().required().default("FOOTBALL"),
+  eventType: Joi.string().required().valid("TENNIS","PAINTBALL","CARTING"),
   field: Joi.string().required(),
   gender: Joi.string().required(),
   chat: Joi.array().items(Joi.string()),

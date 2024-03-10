@@ -63,6 +63,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    weight: { // poids
+      type: String,
+      default: false,  
+    },
+
   },
   {
     timestamps: true,
